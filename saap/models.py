@@ -51,4 +51,4 @@ class Subject(models.Model):
 	periodscore = models.IntegerField()
 
 	def __str__(self):
-		return f'{self.gradelevel} {self.subject_name} - Assessment Period:{self.assessmentperiod}'
+		return f'{self.gradelevel} {self.subject_name} - Assessment Period:{self.assessmentperiod} - Overal Score:{self.periodscore}'
