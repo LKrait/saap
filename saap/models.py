@@ -7,6 +7,12 @@ SUBJECT_ =  [("English", "English"),("Mathematics", "Mathematics"),("Science", "
 ("Social Science", "Social Science"),("Arts", "Arts"),("Making A Living", "Making A Living"),
 ("Health & Physical Education", "Health & Physical Education")]
 
+
+GRADE_LEVEL = [
+(3,3),(4,4),(5,5),(6,6),(7,7),(8,8)
+]
+
+
 class AssessmentPeriod(models.Model):
 	year = models.CharField(max_length=4)
 	order = models.IntegerField()
@@ -19,7 +25,7 @@ class AssessmentPeriod(models.Model):
 
 class GradeLevel(models.Model):
 	year = models.CharField(max_length=4)
-	level = models.PositiveSmallIntegerField()
+	level = models.PositiveSmallIntegerField(choices=GRADE_LEVEL)
 
 	def __str__(self):
 		return f'Grade {self.level}'
